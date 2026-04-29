@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/main.js"></script>
+</head>
+
+<body>
+    <main class="page">
+        <section class="slider">
+            <div class="slider__header">
+                <!-- sectionではなくdivなのは、 単独で章にならなくて、あくまで章の部品だから -->
+                <h1 id="slider-title">画像スライダーの練習</h1>
+                <p>画像とキャプションをまとめたスライダーを練習で作ります。</p>
+            </div>
+            <div class="slide__viewport">
+                <div class="slider__viewport">
+                    <!-- figureは「画像」と「その説明」を意味として結びつけるために使う -->
+                    <figure class="slide" data-slide>
+                        <img src="img/photo-1.jpg" alt="朝日に照らされた海辺の風景">
+                        <figcaption>
+                            静かな海辺に朝日が差し込む、旅の始まりの一枚。
+                        </figcaption>
+                    </figure>
+
+                    <figure class="slide" data-slide hidden>
+                        <img src="img/photo-2.jpg" alt="緑に囲まれた山道">
+                        <figcaption>
+                            木々の間を抜ける山道。歩くほど景色が変わっていきます。
+                        </figcaption>
+                    </figure>
+
+                    <figure class="slide" data-slide hidden>
+                        <img src="img/photo-3.jpg" alt="夕暮れの街並み">
+                        <figcaption>
+                            夕暮れの街に灯りがともり、一日の終わりを感じる場面。
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="slider__controles" role="group" aria-label="スライダー操作">
+                <!-- role="group"は、このボタンたちはバラバラじゃなくて一つのグループですという表示 -->
+                <button class="slider__button" type="button" data-prev aria-label="前の画像を表示">
+                    前へ
+                </button>
+
+                <p class="slider__status">
+                    <span aria-hidden="true" data-visible-status>1 / 3</span>
+                    <span class="visually-hidden" aria-live="polite" aria-atomic="true" data-status-text>
+                        <!-- aria-liveは画面の一部が変わったときに変更を読み上げてもらうため -->
+                        <!-- aria-atomic="true" は変更された部分だけではなく、その要素全体を読み上げる -->
+                        現在のスライド: 1 / 3
+                    </span>
+                </p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
